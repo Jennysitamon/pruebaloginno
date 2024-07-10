@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Login Plataforma Escolar</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: rgb(118,77,65);
+            background: linear-gradient(91deg, rgba(118,77,65,1) 2%, rgba(79,28,15,1) 15%, rgba(87,38,25,1) 50%, rgba(130,92,81,1) 100%, rgba(79,28,15,1) 100%);
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    {% block content %}{% endblock content %}
+    <div class="container">
+        {% block content %}{% endblock content %}
+    </div>
 </body>
 </html>
