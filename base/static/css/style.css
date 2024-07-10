@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #813e2d, #a06f4a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.shadow-wrap {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #a06f4a;
+    outline: none;
+}
+
+#id_username {
+    margin-bottom: 20px;
+}
+
+.form-wrap {
+    background-color: #813e2d;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-wrap:hover {
+    background-color: #a06f4a;
+    transform: translateY(-2px);
+}
+
+.form-wrap:active {
+    transform: translateY(0);
+}
+
+.form-wrap:focus {
+    outline: none;
+}
+
+.form-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.signup-link{
+    color: #333;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.signup-link:hover{
+    text-decoration: underline;
+
+}
+
