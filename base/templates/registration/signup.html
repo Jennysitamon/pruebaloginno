@@ -1,17 +1,80 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="shadow p-4 rounded" style="max-width: 600px; margin-top: 20px; width: 100%; background-color: #683616;">
+    <div class="shadow p-4 rounded" style="
+        max-width: 600px; 
+        margin-top: 20px; 
+        width: 100%; 
+        background-color: #683616; 
+        border: 1px solid #5C4031;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;">
         <h3 class="mb-4 text-center text-white">Registrarse</h3>
         <form method="POST" class="signup-form">
             {% csrf_token %}
             <div class="form-group">
                 {{ form.as_p }}
             </div>
-            <button type="submit" class="btn btn-coffee btn-block mt-3">Registrarse</button>
+            <button type="submit" class="btn btn-coffee btn-block mt-3">
+                Registrarse
+            </button>
         </form>
-        <p class="text-center mt-3"><a href="{% url "base:login" %}" class="text-white">¿Ya tienes cuenta? Iniciar sesión</a></p>
+        <p class="text-center mt-3" style="
+            margin-top: 15px; 
+            color: #F5DEB3;
+            ">
+            <a href="{% url "base:login" %}" style="
+                color: #F5DEB3;
+                text-decoration: underline;
+                transition: color 0.3s ease; 
+                ">¿Ya tienes cuenta? Iniciar sesión</a>
+        </p>
     </div>
 </div>
+<style>
+    .shadow:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4); 
+        background-color: #5C4031; 
+    }
+
+    .btn-coffee {
+        background-color: #8B4513;
+        border: none; 
+        color: #fff; 
+        padding: 10px 15px; 
+        font-size: 16px; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    }
+
+    .btn-coffee:hover {
+        background-color: #6A3E1F; 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    }
+
+    .text-center a:hover {
+        color: #FFF; 
+    }
+
+    .form-control {
+        background-color: transparent !important; 
+        border: 1px solid #D2B48C !important; 
+        border-radius: 5px !important; 
+        color: #FFF !important; 
+        padding: 10px !important; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    }
+
+    .form-control:focus {
+        border-color: #8B4513 !important; 
+        box-shadow: 0 0 5px rgba(0,0,0,0.3) !important; 
+        outline: none !important; 
+    }
+    .form-control:hover {
+        border-color: #6A3E1F !important; 
+        box-shadow: 0 0 5px rgba(0,0,0,0.3) !important; 
+    }
+</style>
 {% endblock content %}

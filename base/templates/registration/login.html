@@ -1,15 +1,64 @@
 {% extends "base.html" %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% block content %}
 <div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="shadow p-4 rounded" style="max-width: 400px; width: 100%; background-color: #945b35;">
+    <div class="shadow p-4 rounded" style="
+        max-width: 400px; 
+        width: 100%; 
+        background-color: #855637; 
+        border: 2px solid #4b2204; 
+        box-shadow: 0 4px 8px rgba(66, 4, 4, 0.616); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para animaciones */
+        ">
         <h3 class="mb-4 text-center text-white">Iniciar Sesión</h3>
         <form method="POST" class="login-form">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-coffee btn-block">Ingresar</button>
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-coffee btn-block">
+                Ingresar
+            </button>
         </form>
-        <p class="text-center mt-3"><a href="{% url "base:authView" %}" class="text-white">¿No tienes cuenta? Regístrate</a></p>
+        <p class="text-center mt-3" style="
+            margin-top: 15px; 
+            color: #F5DEB3; 
+            ">
+            <a href="{% url "base:authView" %}" style="
+                color: #e4ccca; 
+                text-decoration: underline;
+                transition: color 0.3s ease; 
+                ">¿No tienes cuenta? Regístrate</a>
+        </p>
     </div>
 </div>
+
+<style>
+    .shadow:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4); 
+    }
+
+    .btn-coffee {
+        background-color: #8B4513; 
+        border: none; 
+        color: #fff; 
+        padding: 10px 15px; 
+        font-size: 16px; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    }
+
+    .btn-coffee:hover {
+        background-color: #6A3E1F; 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    }
+
+    .text-center a:hover {
+        color: #d1bebe; 
+    }
+</style>
+
 {% endblock content %}
